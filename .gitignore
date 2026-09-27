@@ -1,0 +1,6 @@
+.vscode/
+**/__pycache__/
+conv1d
+saxpy
+sgemm
+query_config

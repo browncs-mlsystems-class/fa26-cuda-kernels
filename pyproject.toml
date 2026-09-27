@@ -1,0 +1,23 @@
+[project]
+name = "cuda-explore"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Deepti Raghavan", email = "deeptir@brown.edu" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "ninja>=1.13.2",
+    "numpy>=2.5.2",
+    "nvidia-ml-py>=13.610.43",
+    "prettytable>=3.18.0",
+    "torch>=2.14.0",
+]
+
+[project.scripts]
+cuda-explore = "cuda_explore:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
