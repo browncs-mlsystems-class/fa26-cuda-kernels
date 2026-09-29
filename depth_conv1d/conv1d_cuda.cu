@@ -20,7 +20,7 @@ void print_usage(const char *prog_name) {
     printf("Usage: %s [-B <B>] [-D <D>] [-L <L>] [-K <K>] [-R <R>] [-h]\n", prog_name);
     printf("Performs 1D depthwise convolution for a short filter length, on an input "
            "signal of shape (B, D, L), filter of shape (D, K), and bias of shape (D), R times.\n");
-    printf("  -B <M>            Batch dimension B\n");
+    printf("  -B <B>            Batch dimension B\n");
     printf("  -D <D>            Depth dimension D\n");
     printf("  -L <L>            Length dimension L\n");
     printf("  -K <K>            Filter length K, odd and no more than %d\n", MAX_K);
@@ -56,7 +56,7 @@ void init_tensor(float *mat, int size) {
 int main(int argc, char* argv[]) {
     // ----------------------------------------------------------------------
     // Parse arguments
-    int B = 1, D = 8192, L = 8192, K = 3;
+    int B = 1, D = 8192, L = 8192, K = 3, R = 1;
 
     int opt;
     while ((opt = getopt(argc, argv, "hB:D:L:K:R:")) != -1) {
@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
                 }
                 break;
             case 'R':
-                if(parse_int(optarg, &R, 1, INT_MAX, DIM_ERR_MSG) != 0) {
+                if(parse_int(optarg, &R, 1, INT_MAX, R_ERR_MSG) != 0) {
                     exit(EXIT_FAILURE);
                 }
                 break;
