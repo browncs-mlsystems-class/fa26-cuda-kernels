@@ -23,7 +23,7 @@ def saxpy_transferred(N: int) -> int:
     Args:
         N (int): the number of elements in the input vectors
     Returns:
-        int: the number of memory accesses the SAXPY kernel performs
+        int: the number of bytes transferred per `cudaMemcpy` operation
     """
     # TODO: Implement!
     return 0
@@ -62,7 +62,7 @@ def sgemm_memory_accesses(M: int, K: int, N: int) -> int:
 
 def sgemm_flops(M: int, K: int, N: int) -> int:
     """
-    Determines the number of FLOPs that the SAXPY CUDA kernel performs on 
+    Determines the number of FLOPs that the SGEMM CUDA kernel performs on 
     three input matrices of size M x K, K x N, and M x N.
     
     Args:
@@ -71,7 +71,7 @@ def sgemm_flops(M: int, K: int, N: int) -> int:
         matrices, respectively
         N (int): the number of columns of the second and third input matrix
     Returns:
-        int: the number of memory accesses the SGEMM kernel performs
+        int: the number of FLOPs the SGEMM kernel performs
     """
     # TODO: Implement!
     return 0
